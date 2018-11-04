@@ -4,9 +4,7 @@ import estructuras.Archivo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -24,22 +22,22 @@ public class Controller implements Initializable {
     private Label lblResultado;
 
     @FXML
+    private Label lblContRes;
+
+    @FXML
     private TextArea txtArchivo;
 
     @FXML
-    private Label lblContRes;
-
+    private void  btnSalirClick(ActionEvent event) {
+        System.exit(0);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         archivo = new Archivo();
-        if(archivo.levantoHashTable())
-        {
-
-        }
-
-
+        archivo.levantoHashTable();
+        //asigno a una label la cant de palabras encontradas
     }
 
     @FXML
@@ -50,9 +48,14 @@ public class Controller implements Initializable {
         File file = fc.showOpenDialog(null);
         if (file != null)
         {
-            txtArchivo.appendText(archivo.cargar(file.getAbsolutePath()));
+           txtArchivo.appendText(archivo.cargar(file.getAbsolutePath()));
+           lblResultado.setText("");
+           lblContRes.setText("");
+           Alert alert = new Alert(Alert.AlertType.INFORMATION, "Archivo cargado con éxito.", ButtonType.OK);
+           alert.setHeaderText(null);
+           alert.showAndWait();
+           //asigno con un label la cantidad de palabras encontradas
         }
-
     }
 
     @FXML
@@ -72,17 +75,15 @@ public class Controller implements Initializable {
                 lblResultado.setText("Palabra No encontrada");
                 lblContRes.setText("");
             }
-
         }
-
     }
 
     @FXML
     private void btnLimpiarClick(ActionEvent event) {
         archivo.limpiar();
-        txtArchivo.setText("");
         txtPalabra.setText("");
         lblResultado.setText("");
         lblContRes.setText("");
+        //actualizo el label a 0
     }
 }

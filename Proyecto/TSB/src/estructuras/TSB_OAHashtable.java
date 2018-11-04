@@ -361,8 +361,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
         return true;
     }
 
-
-    /*
+    /**
      * Función hash. Toma una clave entera k y calcula y retorna un índice
      * válido para esa clave para entrar en la tabla.
      */
@@ -371,8 +370,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
         return h(k, this.vector.length);
     }
 
-
-    /*
+    /**
      * Función hash. Toma un objeto key que representa una clave y calcula y
      * retorna un índice válido para esa clave para entrar en la tabla.
      */
@@ -381,7 +379,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
         return h(key.hashCode(), this.vector.length);
     }
 
-    /*
+    /**
      * Función hash. Toma un objeto key que representa una clave y un tamaño de
      * tabla t, y calcula y retorna un índice válido para esa clave dedo ese
      * tamaño.
@@ -391,7 +389,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
         return h(key.hashCode(), t);
     }
 
-    /*
+    /**
      * Función hash. Toma una clave entera k y un tamaño de tabla t, y calcula y
      * retorna un índice válido para esa clave dado ese tamaño.
      */
@@ -400,7 +398,6 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
         if(k < 0) k *= -1;
         return k % t;
     }
-
 
     @Override
     public V remove(Object key) {
@@ -463,7 +460,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
     }
 
 
-    /*
+    /**
      * Clase interna que representa los pares de objetos que se almacenan en la
      * tabla hash: son instancias de esta clase las que realmente se guardan en
      * en cada una de las listas del arreglo table que se usa como soporte de
@@ -553,7 +550,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
     }
 
 
-    /*
+    /**
      * Clase interna que representa una vista de todas los Claves mapeadas en la
      * tabla: si la vista cambia, cambia también la tabla que le da respaldo, y
      * viceversa. La vista es stateless: no mantiene estado alguno (es decir, no
@@ -604,7 +601,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
             // flag para controlar si remove() está bien invocado...
             private boolean next_ok;
 
-            /*
+            /**
              * Crea un iterador comenzando en la primera lista. Activa el
              * mecanismo fail-fast.
              */
@@ -615,7 +612,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
 
             }
 
-            /*
+            /**
              * Determina si hay al menos un elemento en la tabla que no haya
              * sido retornado por next().
              */
@@ -641,7 +638,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return (tempEntry < t.length);
             }
 
-            /*
+            /**
              * Retorna el siguiente elemento disponible en la tabla.
              */
             @Override
@@ -667,7 +664,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return key;
             }
 
-            /*
+            /**
              * Remueve el elemento actual de la tabla, dejando el iterador en la
              * posición anterior al que fue removido. El elemento removido es el
              * que fue retornado la última vez que se invocó a next(). El método
@@ -729,7 +726,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
             // flag para controlar si remove() está bien invocado...
             private boolean next_ok;
 
-            /*
+            /**
              * Crea un iterador comenzando en la primera lista. Activa el
              * mecanismo fail-fast.
              */
@@ -740,7 +737,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
 
             }
 
-            /*
+            /**
              * Determina si hay al menos un elemento en la tabla que no haya
              * sido retornado por next().
              */
@@ -766,7 +763,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return (tempEntry < t.length);
             }
 
-            /*
+            /**
              * Retorna el siguiente elemento disponible en la tabla.
              */
             @Override
@@ -792,7 +789,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return value;
             }
 
-            /*
+            /**
              * Remueve el elemento actual de la tabla, dejando el iterador en la
              * posición anterior al que fue removido. El elemento removido es el
              * que fue retornado la última vez que se invocó a next(). El método
@@ -882,7 +879,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 next_ok = false;
             }
 
-            /*
+            /**
              * Determina si hay al menos un elemento en la tabla que no haya
              * sido retornado por next().
              */
@@ -908,7 +905,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return (tempEntry < t.length);
             }
 
-            /*
+            /**
              * Retorna el siguiente elemento disponible en la tabla.
              */
             @Override
@@ -933,7 +930,7 @@ public class TSB_OAHashtable<K,V> implements Map<K,V>, Cloneable, Serializable
                 return t[current_entry];
             }
 
-            /*
+            /**
              * Remueve el elemento actual de la tabla, dejando el iterador en la
              * posición anterior al que fue removido. El elemento removido es el
              * que fue retornado la última vez que se invocó a next(). El método
