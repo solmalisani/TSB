@@ -1,11 +1,3 @@
-Incluir manejo de excepciones
-Clase TSB_OAHashtable
--Metodo v get
--contains key
-ver si falta alguno
-
 Falta:
-*recuperar la tabla cada vez q ejecuto a menos q esta 
-no exista ((hacer la interfaz
 *Mostrar en todo momento la cant total de palabras distintas 
 q contiene la tabla
