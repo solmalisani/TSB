@@ -38,13 +38,11 @@ public class Archivo {
         writer.write(ht);
     }
 
-
     public String cargar(String path) {
 
         StringBuilder sb = null;
 
         try ( Scanner sc = new Scanner(new FileReader(path)) ){
-            //ht.clear();
 
             sb = new StringBuilder();
 

@@ -8,12 +8,6 @@ public class Reader<E extends Map>
 {
     private String arch = "tabla.dat";
 
-
-    public Reader()
-    {
-    }
-
-
     public Reader(String nom)
     {
         arch = nom;
