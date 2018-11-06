@@ -25,6 +25,9 @@ public class Controller implements Initializable {
     private Label lblContRes;
 
     @FXML
+    private Label lblCantPalabras;
+
+    @FXML
     private TextArea txtArchivo;
 
     @FXML
@@ -37,7 +40,7 @@ public class Controller implements Initializable {
     {
         archivo = new Archivo();
         archivo.levantoHashTable();
-        //asigno a una label la cant de palabras encontradas
+        lblCantPalabras.setText(Long.toString(archivo.getSize())); //##################
     }
 
     @FXML
@@ -54,14 +57,14 @@ public class Controller implements Initializable {
            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Archivo cargado con éxito.", ButtonType.OK);
            alert.setHeaderText(null);
            alert.showAndWait();
-           //asigno con un label la cantidad de palabras encontradas
+           lblCantPalabras.setText(Long.toString(archivo.getSize())); //##################
         }
     }
 
     @FXML
     private void btnBuscarClick(ActionEvent event) {
         if(txtPalabra.getText().isEmpty())
-            lblResultado.setText("No ingresó una palabra");
+            lblResultado.setText("No ingresó una palabra.");
         else
         {
             String x = txtPalabra.getText();
@@ -69,11 +72,15 @@ public class Controller implements Initializable {
 
             if(cant != -1) {
                 lblResultado.setText("Palabra encontrada");
-                lblContRes.setText("Aparece " + cant + " veces");
+                if (cant == 1){
+                    lblContRes.setText("Aparece " + cant + " vez.");
+                }
+                else lblContRes.setText("Aparece " + cant + " veces.");
             }
             else {
-                lblResultado.setText("Palabra No encontrada");
+                lblResultado.setText("Palabra no encontrada.");
                 lblContRes.setText("");
+
             }
         }
     }
@@ -84,6 +91,6 @@ public class Controller implements Initializable {
         txtPalabra.setText("");
         lblResultado.setText("");
         lblContRes.setText("");
-        //actualizo el label a 0
+        lblCantPalabras.setText(Long.toString(archivo.getSize())); //##################
     }
 }

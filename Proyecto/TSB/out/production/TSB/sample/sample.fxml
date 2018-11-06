@@ -6,16 +6,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="276.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane id="AnchorPane" prefHeight="312.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <Button layoutX="38.0" layoutY="171.0" mnemonicParsing="false" onAction="#btnCargarClick" prefHeight="25.0" prefWidth="104.0" text="Cargar Archivo" />
-        <Label layoutX="40.0" layoutY="26.0" text="Palabra a buscar:" />
-        <TextField fx:id="txtPalabra" layoutX="40.0" layoutY="51.0" />
-        <Button layoutX="210.0" layoutY="51.0" mnemonicParsing="false" onAction="#btnBuscarClick" text="Buscar" />
-        <Button layoutX="38.0" layoutY="219.0" mnemonicParsing="false" onAction="#btnLimpiarClick" text="Limpiar Archivos" />
-      <Label fx:id="lblContRes" layoutX="24.0" layoutY="130.0" />
-      <Label fx:id="lblResultado" layoutX="24.0" layoutY="96.0" />
-      <Button cancelButton="true" layoutX="252.0" layoutY="229.0" mnemonicParsing="false" onAction="#btnSalirClick" text="Salir" />
-      <TextArea fx:id="txtArchivo" layoutX="205.0" layoutY="132.0" prefHeight="35.0" prefWidth="51.0" visible="false" />
+        <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnCargarClick" prefHeight="25.0" prefWidth="104.0" text="Cargar Archivo" />
+        <Label layoutX="43.0" layoutY="69.0" text="Palabra a buscar:" />
+        <TextField fx:id="txtPalabra" layoutX="43.0" layoutY="94.0" />
+        <Button layoutX="213.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnBuscarClick" text="Buscar" />
+        <Button layoutX="41.0" layoutY="262.0" mnemonicParsing="false" onAction="#btnLimpiarClick" text="Limpiar Archivos" />
+      <Label fx:id="lblContRes" layoutX="40.0" layoutY="166.0" textFill="#4a4848" />
+      <Label fx:id="lblResultado" layoutX="40.0" layoutY="138.0" textFill="#4a4848" />
+      <Button cancelButton="true" layoutX="260.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnSalirClick" text="Salir" />
+      <TextArea fx:id="txtArchivo" layoutX="208.0" layoutY="175.0" prefHeight="35.0" prefWidth="51.0" visible="false" />
+      <Label layoutX="43.0" layoutY="27.0" text="Cantidad total de palabras: " />
+      <Label fx:id="lblCantPalabras" layoutX="199.0" layoutY="27.0" />
     </children>
 </AnchorPane>

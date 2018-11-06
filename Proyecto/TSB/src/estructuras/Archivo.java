@@ -39,7 +39,6 @@ public class Archivo {
     }
 
     public String cargar(String path) {
-
         StringBuilder sb = null;
 
         try ( Scanner sc = new Scanner(new FileReader(path)) ){
@@ -77,6 +76,10 @@ public class Archivo {
         return sb.toString();
     }
 
+
+    public long getSize(){
+        return ht.size();
+    }
 
     public int buscar(String palabra) {
         Integer cantidad = ht.get(palabra);
